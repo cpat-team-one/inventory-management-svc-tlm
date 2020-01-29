@@ -4,14 +4,17 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.PostConstruct;
 
-import com.cloudant.client.api.CloudantClient;
-import com.cloudant.client.api.Database;
+
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
+import com.cloudant.client.api.CloudantClient;
+import com.cloudant.client.api.Database;
 import com.ibm.inventory_management.config.CloudantConfig;
 import com.ibm.inventory_management.models.StockItem;
 
 @Service
+@Primary
 public class StockItemService implements StockItemApi {
     private CloudantConfig config;
     private CloudantClient client;
